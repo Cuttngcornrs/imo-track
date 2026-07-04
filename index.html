@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -22,198 +23,253 @@
       --shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
       --radius: 22px;
       --accent: #6d7cff;
-    }
 
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(109,124,255,0.14), transparent 30%),
-        radial-gradient(circle at top right, rgba(66, 184, 255, 0.10), transparent 25%),
-        var(--bg);
-      color: var(--text);
-    }
+```
+  --topic-a: #6d7cff;
+  --topic-c: #42b8ff;
+  --topic-g: #48bb78;
+  --topic-n: #f6ad55;
+}
 
-    .app { max-width: 1600px; margin: 0 auto; padding: 28px 18px 44px; }
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(109,124,255,0.14), transparent 30%),
+    radial-gradient(circle at top right, rgba(66, 184, 255, 0.10), transparent 25%),
+    var(--bg);
+  color: var(--text);
+}
 
-    .hero {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 16px;
-      margin-bottom: 18px;
-      flex-wrap: wrap;
-    }
+.app { max-width: 1600px; margin: 0 auto; padding: 28px 18px 44px; }
 
-    .title-wrap h1 {
-      margin: 0;
-      font-size: clamp(1.7rem, 3vw, 2.7rem);
-      letter-spacing: -0.04em;
-      line-height: 1.05;
-    }
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 16px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
 
-    .title-wrap p { margin: 10px 0 0; color: var(--muted); max-width: 72ch; }
+.title-wrap h1 {
+  margin: 0;
+  font-size: clamp(1.7rem, 3vw, 2.7rem);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
 
-    .top-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.title-wrap p { margin: 10px 0 0; color: var(--muted); max-width: 72ch; }
 
-    .card {
-      background: var(--panel);
-      backdrop-filter: blur(16px);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
+.top-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
 
-    .controls {
-      padding: 16px;
-      display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: 12px;
-      margin-bottom: 16px;
-    }
+.card {
+  background: var(--panel);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
 
-    .field { grid-column: span 3; display: flex; flex-direction: column; gap: 8px; }
-    .field.wide { grid-column: span 4; }
-    .field.small { grid-column: span 2; }
-    .field label, .section-label { font-size: 0.85rem; color: var(--muted); }
+.controls {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
 
-    input, select, textarea, button { font: inherit; }
-    input, select, textarea {
-      border: 1px solid rgba(24,32,51,0.12);
-      background: rgba(255,255,255,0.85);
-      color: var(--text);
-      border-radius: 14px;
-      padding: 12px 14px;
-      outline: none;
-      transition: 0.2s ease;
-    }
-    input:focus, select:focus, textarea:focus {
-      border-color: rgba(109,124,255,0.5);
-      box-shadow: 0 0 0 4px rgba(109,124,255,0.12);
-    }
-    textarea { resize: vertical; min-height: 130px; width: 100%; line-height: 1.45; }
+.field { grid-column: span 3; display: flex; flex-direction: column; gap: 8px; }
+.field.wide { grid-column: span 4; }
+.field.small { grid-column: span 2; }
+.field.full { grid-column: 1 / -1; }
+.field label, .section-label { font-size: 0.85rem; color: var(--muted); }
 
-    .btn {
-      border: none;
-      border-radius: 14px;
-      padding: 12px 15px;
-      background: var(--accent);
-      color: white;
-      cursor: pointer;
-      transition: 0.2s ease;
-      font-weight: 600;
-      box-shadow: 0 12px 28px rgba(109,124,255,0.24);
-    }
-    .btn:hover { transform: translateY(-1px); filter: brightness(1.02); }
-    .btn.secondary { background: rgba(255,255,255,0.8); color: var(--text); box-shadow: none; border: 1px solid var(--border); }
-    .btn.danger { background: #fff; color: #c2344d; border: 1px solid rgba(194,52,77,0.18); box-shadow: none; }
+input, select, textarea, button { font: inherit; }
+input, select, textarea {
+  border: 1px solid rgba(24,32,51,0.12);
+  background: rgba(255,255,255,0.85);
+  color: var(--text);
+  border-radius: 14px;
+  padding: 12px 14px;
+  outline: none;
+  transition: 0.2s ease;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: rgba(109,124,255,0.5);
+  box-shadow: 0 0 0 4px rgba(109,124,255,0.12);
+}
+textarea { resize: vertical; min-height: 130px; width: 100%; line-height: 1.45; }
 
-    .split { display: grid; grid-template-columns: 1.9fr 1fr; gap: 16px; align-items: start; }
-    .status-editor, .legend-box, .table-card { padding: 16px; }
+.btn {
+  border: none;
+  border-radius: 14px;
+  padding: 12px 15px;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-weight: 600;
+  box-shadow: 0 12px 28px rgba(109,124,255,0.24);
+}
+.btn:hover { transform: translateY(-1px); filter: brightness(1.02); }
+.btn.secondary { background: rgba(255,255,255,0.8); color: var(--text); box-shadow: none; border: 1px solid var(--border); }
+.btn.danger { background: #fff; color: #c2344d; border: 1px solid rgba(194,52,77,0.18); box-shadow: none; }
 
-    .section-head {
-      display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px;
-    }
-    .section-head h2 { margin: 0; font-size: 1.05rem; letter-spacing: -0.02em; }
+.topic-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+.topic-box {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: rgba(255,255,255,0.8);
+  padding: 12px 14px;
+  display: grid;
+  gap: 8px;
+  min-height: 88px;
+}
+.topic-box .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.topic-box .name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+}
+.topic-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  flex: 0 0 auto;
+}
+.topic-count {
+  font-size: 1.05rem;
+  color: var(--muted);
+  font-weight: 800;
+}
+.topic-sub {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
 
-    .status-list { display: grid; gap: 10px; margin-bottom: 12px; }
-    .status-row { display: grid; grid-template-columns: 1fr auto auto; gap: 10px; align-items: center; }
-    .status-pill {
-      padding: 8px 10px; border-radius: 999px; font-size: 0.8rem; font-weight: 700;
-      letter-spacing: 0.01em; color: #fff; white-space: nowrap;
-    }
-    .hint { color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
+.split { display: grid; grid-template-columns: 1.9fr 1fr; gap: 16px; align-items: start; }
+.status-editor, .legend-box, .table-card { padding: 16px; }
 
-    .legend { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
-    .legend-item {
-      display: inline-flex; align-items: center; gap: 8px; padding: 8px 10px;
-      border-radius: 999px; background: rgba(255,255,255,0.78); border: 1px solid var(--border); font-size: 0.85rem;
-    }
-    .legend-swatch, .cell-swatch { width: 12px; height: 12px; border-radius: 50%; flex: 0 0 auto; }
+.section-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px;
+}
+.section-head h2 { margin: 0; font-size: 1.05rem; letter-spacing: -0.02em; }
 
-    .table-card { overflow: auto; }
-    .grid-wrap { min-width: 1600px; }
-    .grid { display: grid; gap: 8px; }
+.status-list { display: grid; gap: 10px; margin-bottom: 12px; }
+.status-row { display: grid; grid-template-columns: 1fr auto auto; gap: 10px; align-items: center; }
+.status-pill {
+  padding: 8px 10px; border-radius: 999px; font-size: 0.8rem; font-weight: 700;
+  letter-spacing: 0.01em; color: #fff; white-space: nowrap;
+}
+.hint { color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
 
-    .grid-header, .grid-row {
-      display: grid;
-      grid-template-columns: 90px repeat(var(--cols), minmax(86px, 1fr));
-      gap: 8px;
-    }
-    .corner, .year-label, .prob-head, .cell {
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.8);
-    }
-    .corner, .prob-head, .year-label {
-      display: flex; align-items: center; justify-content: center; padding: 10px 8px; font-weight: 700; color: var(--muted);
-    }
-    .year-label {
-      position: sticky; left: 0; z-index: 1; background: rgba(255,255,255,0.92); box-shadow: 8px 0 18px rgba(15,23,42,0.04);
-    }
-    .cell {
-      min-height: 78px; padding: 10px; cursor: pointer; transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
-      display: flex; flex-direction: column; gap: 8px; justify-content: space-between; position: relative; overflow: hidden;
-    }
-    .cell:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(15,23,42,0.06); border-color: rgba(109,124,255,0.25); }
-    .cell .top { display: flex; align-items: center; justify-content: space-between; gap: 6px; font-size: 0.77rem; color: rgba(24,32,51,0.8); font-weight: 700; }
-    .cell .status-name {
-      font-size: 0.78rem; line-height: 1.2; font-weight: 700; color: rgba(24,32,51,0.92);
-      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-    }
-    .cell.empty .status-name { color: rgba(24,32,51,0.35); }
-    .cell.empty { background: rgba(255,255,255,0.62); }
+.legend { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+.legend-item {
+  display: inline-flex; align-items: center; gap: 8px; padding: 8px 10px;
+  border-radius: 999px; background: rgba(255,255,255,0.78); border: 1px solid var(--border); font-size: 0.85rem;
+}
+.legend-swatch, .cell-swatch { width: 12px; height: 12px; border-radius: 50%; flex: 0 0 auto; }
 
-    .modal-backdrop {
-      position: fixed; inset: 0; background: rgba(10, 14, 24, 0.42); display: none; place-items: center; padding: 18px; z-index: 50;
-    }
-    .modal-backdrop.show { display: grid; }
-    .modal {
-      width: min(980px, 100%); max-height: 92vh; overflow: auto; background: rgba(255,255,255,0.96);
-      border-radius: 28px; border: 1px solid rgba(255,255,255,0.4); box-shadow: 0 24px 70px rgba(0,0,0,0.24); padding: 18px;
-    }
-    .modal-head { display: flex; justify-content: space-between; align-items: start; gap: 12px; margin-bottom: 14px; }
-    .modal-title { margin: 0; font-size: 1.2rem; letter-spacing: -0.03em; }
-    .modal-subtitle { margin: 5px 0 0; color: var(--muted); font-size: 0.95rem; }
-    .modal-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 14px; }
-    .panel { border: 1px solid var(--border); border-radius: 22px; padding: 14px; background: rgba(249,250,252,0.9); }
-    .panel h3 { margin: 0 0 10px; font-size: 0.98rem; }
-    .row { display: grid; gap: 10px; margin-bottom: 12px; }
-    .status-options { display: grid; gap: 8px; }
-    .status-option {
-      display: flex; gap: 10px; align-items: center; padding: 10px 12px; border-radius: 14px; border: 1px solid var(--border); background: white; cursor: pointer; transition: 0.15s ease;
-    }
-    .status-option:hover { border-color: rgba(109,124,255,0.24); }
-    .status-option input { margin: 0; }
-    .status-option .label { font-weight: 700; font-size: 0.92rem; }
-    .preview { border-radius: 18px; border: 1px solid var(--border); background: white; padding: 12px; min-height: 120px; overflow: auto; }
-    .modal-actions { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
-    .mini-actions { display: flex; gap: 8px; flex-wrap: wrap; }
-    .footer-note { margin-top: 14px; color: var(--muted); font-size: 0.9rem; }
+.table-card { overflow: auto; }
+.grid-wrap { min-width: 1600px; }
+.grid { display: grid; gap: 8px; }
 
-    .source-row {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 10px;
-      align-items: center;
-      margin-top: 10px;
-    }
+.grid-header, .grid-row {
+  display: grid;
+  grid-template-columns: 90px repeat(var(--cols), minmax(86px, 1fr));
+  gap: 8px;
+}
+.corner, .year-label, .prob-head, .cell {
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.8);
+}
+.corner, .prob-head, .year-label {
+  display: flex; align-items: center; justify-content: center; padding: 10px 8px; font-weight: 700; color: var(--muted);
+}
+.year-label {
+  position: sticky; left: 0; z-index: 1; background: rgba(255,255,255,0.92); box-shadow: 8px 0 18px rgba(15,23,42,0.04);
+}
+.cell {
+  min-height: 78px; padding: 10px; cursor: pointer; transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+  display: flex; flex-direction: column; gap: 8px; justify-content: space-between; position: relative; overflow: hidden;
+}
+.cell:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(15,23,42,0.06); border-color: rgba(109,124,255,0.25); }
+.cell .top { display: flex; align-items: center; justify-content: space-between; gap: 6px; font-size: 0.77rem; color: rgba(24,32,51,0.8); font-weight: 700; }
+.cell .status-name {
+  font-size: 0.78rem; line-height: 1.2; font-weight: 700; color: rgba(24,32,51,0.92);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.cell.empty .status-name { color: rgba(24,32,51,0.35); }
+.cell.empty { background: rgba(255,255,255,0.62); }
 
-    @media (max-width: 1100px) {
-      .split, .modal-grid { grid-template-columns: 1fr; }
-      .controls { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-      .field, .field.wide, .field.small { grid-column: span 6; }
-    }
+.modal-backdrop {
+  position: fixed; inset: 0; background: rgba(10, 14, 24, 0.42); display: none; place-items: center; padding: 18px; z-index: 50;
+}
+.modal-backdrop.show { display: grid; }
+.modal {
+  width: min(980px, 100%); max-height: 92vh; overflow: auto; background: rgba(255,255,255,0.96);
+  border-radius: 28px; border: 1px solid rgba(255,255,255,0.4); box-shadow: 0 24px 70px rgba(0,0,0,0.24); padding: 18px;
+}
+.modal-head { display: flex; justify-content: space-between; align-items: start; gap: 12px; margin-bottom: 14px; }
+.modal-title { margin: 0; font-size: 1.2rem; letter-spacing: -0.03em; }
+.modal-subtitle { margin: 5px 0 0; color: var(--muted); font-size: 0.95rem; }
+.modal-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 14px; }
+.panel { border: 1px solid var(--border); border-radius: 22px; padding: 14px; background: rgba(249,250,252,0.9); }
+.panel h3 { margin: 0 0 10px; font-size: 0.98rem; }
+.row { display: grid; gap: 10px; margin-bottom: 12px; }
+.status-options { display: grid; gap: 8px; }
+.status-option {
+  display: flex; gap: 10px; align-items: center; padding: 10px 12px; border-radius: 14px; border: 1px solid var(--border); background: white; cursor: pointer; transition: 0.15s ease;
+}
+.status-option:hover { border-color: rgba(109,124,255,0.24); }
+.status-option input { margin: 0; }
+.status-option .label { font-weight: 700; font-size: 0.92rem; }
+.preview { border-radius: 18px; border: 1px solid var(--border); background: white; padding: 12px; min-height: 120px; overflow: auto; }
+.modal-actions { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+.mini-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.footer-note { margin-top: 14px; color: var(--muted); font-size: 0.9rem; }
 
-    @media (max-width: 720px) {
-      .app { padding-inline: 12px; }
-      .controls { grid-template-columns: 1fr; }
-      .field, .field.wide, .field.small { grid-column: auto; }
-      .modal { padding: 14px; border-radius: 22px; }
-      .grid-wrap { min-width: 1400px; }
-    }
+.source-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+@media (max-width: 1100px) {
+  .split, .modal-grid { grid-template-columns: 1fr; }
+  .controls { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .field, .field.wide, .field.small { grid-column: span 6; }
+  .topic-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 720px) {
+  .app { padding-inline: 12px; }
+  .controls { grid-template-columns: 1fr; }
+  .field, .field.wide, .field.small { grid-column: auto; }
+  .modal { padding: 14px; border-radius: 22px; }
+  .grid-wrap { min-width: 1400px; }
+  .topic-summary { grid-template-columns: 1fr; }
+}
+```
+
   </style>
 </head>
 <body>
@@ -221,7 +277,7 @@
     <div class="hero">
       <div class="title-wrap">
         <h1>IMO Shortlist Tracker</h1>
-        
+        <p>A minimal grid for marking shortlist problems as done, not done, solution seen, or any status you want — with local saving on your device.</p>
       </div>
       <div class="top-actions">
         <button class="btn secondary" id="resetLayoutBtn" title="Rebuild the chart while keeping saved cells when possible">Rebuild chart</button>
@@ -229,61 +285,90 @@
       </div>
     </div>
 
-    <div class="card controls">
-      <div class="field small">
-        <label for="startYear">Start year</label>
-        <input id="startYear" type="number" min="1900" step="1" value="2000" />
+```
+<div class="card controls">
+  <div class="field small">
+    <label for="startYear">Start year</label>
+    <input id="startYear" type="number" min="1900" step="1" value="2000" />
+  </div>
+  <div class="field small">
+    <label for="endYear">End year</label>
+    <input id="endYear" type="number" min="1900" step="1" value="2025" />
+  </div>
+  <div class="field small">
+    <label for="problemsPerYear">Problems per type</label>
+    <input id="problemsPerYear" type="number" min="1" max="20" step="1" value="10" />
+  </div>
+  <div class="field small">
+    <label>&nbsp;</label>
+    <button class="btn" id="buildBtn">Build / update grid</button>
+  </div>
+
+  <div class="field wide">
+    <label for="searchBox">Search a problem by label</label>
+    <input id="searchBox" type="text" placeholder="Example: 2018 A4 or N10" />
+  </div>
+
+  <div class="field full">
+    <div class="section-label">Topic progress</div>
+    <div class="topic-summary" id="topicSummary">
+      <div class="topic-box">
+        <div class="row">
+          <div class="name"><span class="topic-dot" style="background:var(--topic-a)"></span>A</div>
+          <div class="topic-count" id="topicCountA">0 / 0</div>
+        </div>
+        <div class="topic-sub" id="topicSubA">0% completed</div>
       </div>
-      <div class="field small">
-        <label for="endYear">End year</label>
-        <input id="endYear" type="number" min="1900" step="1" value="2025" />
+      <div class="topic-box">
+        <div class="row">
+          <div class="name"><span class="topic-dot" style="background:var(--topic-c)"></span>C</div>
+          <div class="topic-count" id="topicCountC">0 / 0</div>
+        </div>
+        <div class="topic-sub" id="topicSubC">0% completed</div>
       </div>
-      <div class="field small">
-        <label for="problemsPerYear">Problems per type</label>
-        <input id="problemsPerYear" type="number" min="1" max="20" step="1" value="10" />
+      <div class="topic-box">
+        <div class="row">
+          <div class="name"><span class="topic-dot" style="background:var(--topic-g)"></span>G</div>
+          <div class="topic-count" id="topicCountG">0 / 0</div>
+        </div>
+        <div class="topic-sub" id="topicSubG">0% completed</div>
       </div>
-      <div class="field wide">
-  <label for="siteTitle">Title</label>
-  <input
-    id="siteTitle"
-    type="text"
-    value="IMO Shortlist Tracker"
-    placeholder="Your tracker title"
-  />
+      <div class="topic-box">
+        <div class="row">
+          <div class="name"><span class="topic-dot" style="background:var(--topic-n)"></span>N</div>
+          <div class="topic-count" id="topicCountN">0 / 0</div>
+        </div>
+        <div class="topic-sub" id="topicSubN">0% completed</div>
+      </div>
+    </div>
+  </div>
 </div>
-      <div class="field small">
-        <label>&nbsp;</label>
-        <button class="btn" id="buildBtn">Build / update grid</button>
-      </div>
-      <div class="field wide">
-        <label for="searchBox">Search a problem by label</label>
-        <input id="searchBox" type="text" placeholder="Example: 2018 A4 or N10" />
-      </div>
-    </div>
 
-    <div class="split">
-      <div class="card table-card">
-        <div class="section-head">
-          <h2>Problem grid</h2>
-          <div class="hint" id="gridMeta"></div>
-        </div>
-        <div class="grid-wrap" id="gridWrap"></div>
-      </div>
-
-      <div class="card status-editor">
-        <div class="section-head">
-          <h2>Status colors</h2>
-          <button class="btn secondary" id="addStatusBtn">Add status</button>
-        </div>
-        <div class="hint" style="margin-bottom: 12px;">Create your own labels and colors. These appear in every problem box.</div>
-        <div class="status-list" id="statusList"></div>
-        <div class="legend-box card" style="padding: 14px; background: rgba(255,255,255,0.56); box-shadow: none;">
-          <div class="section-label">Current legend</div>
-          <div class="legend" id="legend"></div>
-        </div>
-        <div class="footer-note">Everything is stored in <b>localStorage</b>, so it stays on the same device/browser.</div>
-      </div>
+<div class="split">
+  <div class="card table-card">
+    <div class="section-head">
+      <h2>Problem grid</h2>
+      <div class="hint" id="gridMeta"></div>
     </div>
+    <div class="grid-wrap" id="gridWrap"></div>
+  </div>
+
+  <div class="card status-editor">
+    <div class="section-head">
+      <h2>Status colors</h2>
+      <button class="btn secondary" id="addStatusBtn">Add status</button>
+    </div>
+    <div class="hint" style="margin-bottom: 12px;">Create your own labels and colors. These appear in every problem box.</div>
+    <div class="status-list" id="statusList"></div>
+    <div class="legend-box card" style="padding: 14px; background: rgba(255,255,255,0.56); box-shadow: none;">
+      <div class="section-label">Current legend</div>
+      <div class="legend" id="legend"></div>
+    </div>
+    <div class="footer-note">Everything is stored in <b>localStorage</b>, so it stays on the same device/browser.</div>
+  </div>
+</div>
+```
+
   </div>
 
   <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
@@ -296,33 +381,36 @@
         <button class="btn secondary" id="closeModalBtn">Close</button>
       </div>
 
-      <div class="modal-grid">
-        <div class="panel">
-          <h3>Problem statement / LaTeX</h3>
-          <div class="row">
-            <textarea id="latexInput" placeholder="Paste the problem statement or LaTeX here..."></textarea>
-          </div>
-          <div class="section-label" style="margin-bottom: 8px;">Preview</div>
-          <div class="preview" id="latexPreview"></div>
-          <div class="source-row">
-            <input id="sourceUrlInput" type="url" placeholder="AoPS / source URL (optional)" />
-            <button class="btn secondary" id="openSourceBtn">Open source</button>
-          </div>
-        </div>
-
-        <div class="panel">
-          <h3>Status</h3>
-          <div class="status-options" id="modalStatusOptions"></div>
-          <div class="modal-actions">
-            <div class="mini-actions">
-              <button class="btn secondary" id="clearCellBtn">Clear cell</button>
-              <button class="btn secondary" id="copyLabelBtn">Copy label</button>
-            </div>
-            <button class="btn" id="saveCellBtn">Save problem</button>
-          </div>
-        </div>
+```
+  <div class="modal-grid">
+    <div class="panel">
+      <h3>Problem statement / LaTeX</h3>
+      <div class="row">
+        <textarea id="latexInput" placeholder="Paste the problem statement or LaTeX here..."></textarea>
+      </div>
+      <div class="section-label" style="margin-bottom: 8px;">Preview</div>
+      <div class="preview" id="latexPreview"></div>
+      <div class="source-row">
+        <input id="sourceUrlInput" type="url" placeholder="AoPS / source URL (optional)" />
+        <button class="btn secondary" id="openSourceBtn">Open source</button>
       </div>
     </div>
+
+    <div class="panel">
+      <h3>Status</h3>
+      <div class="status-options" id="modalStatusOptions"></div>
+      <div class="modal-actions">
+        <div class="mini-actions">
+          <button class="btn secondary" id="clearCellBtn">Clear cell</button>
+          <button class="btn secondary" id="copyLabelBtn">Copy label</button>
+        </div>
+        <button class="btn" id="saveCellBtn">Save problem</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
   </div>
 
   <template id="statusRowTemplate">
@@ -341,7 +429,6 @@
       startYear: document.getElementById('startYear'),
       endYear: document.getElementById('endYear'),
       problemsPerYear: document.getElementById('problemsPerYear'),
-      siteTitle: document.getElementById('siteTitle'),
       buildBtn: document.getElementById('buildBtn'),
       resetLayoutBtn: document.getElementById('resetLayoutBtn'),
       saveNowBtn: document.getElementById('saveNowBtn'),
@@ -363,7 +450,16 @@
       clearCellBtn: document.getElementById('clearCellBtn'),
       copyLabelBtn: document.getElementById('copyLabelBtn'),
       saveCellBtn: document.getElementById('saveCellBtn'),
-      statusRowTemplate: document.getElementById('statusRowTemplate')
+      statusRowTemplate: document.getElementById('statusRowTemplate'),
+
+      topicCountA: document.getElementById('topicCountA'),
+      topicCountC: document.getElementById('topicCountC'),
+      topicCountG: document.getElementById('topicCountG'),
+      topicCountN: document.getElementById('topicCountN'),
+      topicSubA: document.getElementById('topicSubA'),
+      topicSubC: document.getElementById('topicSubC'),
+      topicSubG: document.getElementById('topicSubG'),
+      topicSubN: document.getElementById('topicSubN')
     };
 
     const defaultState = {
@@ -413,10 +509,9 @@
       s.startYear = clamp(parseInt(els.startYear.value, 10) || s.startYear, 1900, 9999);
       s.endYear = clamp(parseInt(els.endYear.value, 10) || s.endYear, 1900, 9999);
       if (s.endYear < s.startYear) [s.startYear, s.endYear] = [s.endYear, s.startYear];
-      s.problemsPerYear = clamp(parseInt(els.problemsPerYear.value, 10) || s.problemsPerYear, 1, 10);
-      s.title = (els.siteTitle.value || '').trim() || 'IMO Shortlist Tracker';
+      s.problemsPerYear = clamp(parseInt(els.problemsPerYear.value, 10) || s.problemsPerYear, 1, 20);
       state.settings = s;
-      document.title = s.title;
+      document.title = 'IMO Shortlist Tracker';
     }
 
     function clamp(n, a, b) { return Math.max(a, Math.min(b, n)); }
@@ -447,6 +542,7 @@
       saveState();
       renderGrid();
       renderLegend();
+      renderTopicSummary();
     }
 
     function clearCell(year, type, num) {
@@ -454,6 +550,42 @@
       saveState();
       renderGrid();
       renderLegend();
+      renderTopicSummary();
+    }
+
+    function isCompletedStatus(status) {
+      if (!status) return false;
+      if (status.id === 'done') return true;
+      const name = String(status.name || '').trim().toLowerCase().replace(/[^a-z]/g, '');
+      return ['done', 'complete', 'completed', 'solved', 'finished'].includes(name) || name.includes('solved') || name.includes('done') || name.includes('complete');
+    }
+
+    function renderTopicSummary() {
+      normalize();
+      ensureValidStatuses();
+
+      const yearsCount = Math.max(0, state.settings.endYear - state.settings.startYear + 1);
+      const total = yearsCount * state.settings.problemsPerYear;
+
+      TYPES.forEach(type => {
+        let completed = 0;
+
+        for (let year = state.settings.startYear; year <= state.settings.endYear; year++) {
+          for (let n = 1; n <= state.settings.problemsPerYear; n++) {
+            const data = cellData(year, type, n);
+            const status = state.settings.statuses.find(s => s.id === data.statusId);
+            if (isCompletedStatus(status)) completed++;
+          }
+        }
+
+        const pct = total ? Math.round((completed / total) * 100) : 0;
+
+        const countEl = els[`topicCount${type}`];
+        const subEl = els[`topicSub${type}`];
+
+        if (countEl) countEl.textContent = `${completed} / ${total}`;
+        if (subEl) subEl.textContent = `${pct}% completed`;
+      });
     }
 
     function renderStatusEditor() {
@@ -465,23 +597,34 @@
         const deleteBtn = row.querySelector('.delete-status-btn');
         nameInput.value = status.name;
         colorInput.value = status.color;
+
         nameInput.addEventListener('input', () => {
           state.settings.statuses[index].name = nameInput.value.trim() || `Status ${index + 1}`;
-          saveState(); renderGrid(); renderLegend();
+          saveState();
+          renderGrid();
+          renderLegend();
+          renderTopicSummary();
           if (currentCellKey) renderModalStatusOptions();
         });
+
         colorInput.addEventListener('input', () => {
           state.settings.statuses[index].color = colorInput.value;
-          saveState(); renderGrid(); renderLegend();
+          saveState();
+          renderGrid();
+          renderLegend();
+          renderTopicSummary();
           if (currentCellKey) renderModalStatusOptions();
         });
+
         deleteBtn.addEventListener('click', () => {
           const removed = state.settings.statuses.splice(index, 1)[0];
           for (const k of Object.keys(state.cells)) {
             if (state.cells[k].statusId === removed.id) state.cells[k].statusId = '';
           }
-          saveState(); renderAll();
+          saveState();
+          renderAll();
         });
+
         els.statusList.appendChild(row);
       });
     }
@@ -499,7 +642,7 @@
     function renderGrid() {
       normalize();
       ensureValidStatuses();
-      els.siteTitle.value = state.settings.title;
+
       els.startYear.value = state.settings.startYear;
       els.endYear.value = state.settings.endYear;
       els.problemsPerYear.value = state.settings.problemsPerYear;
@@ -526,6 +669,7 @@
         const row = document.createElement('div');
         row.className = 'grid-row';
         row.innerHTML = `<div class="year-label">${year}</div>`;
+
         TYPES.forEach(type => {
           for (let n = 1; n <= state.settings.problemsPerYear; n++) {
             const data = cellData(year, type, n);
@@ -549,6 +693,7 @@
             row.appendChild(cell);
           }
         });
+
         grid.appendChild(row);
       });
 
@@ -557,7 +702,13 @@
       applySearchFilter();
     }
 
-    function renderAll() { renderStatusEditor(); renderLegend(); renderGrid(); saveState(); }
+    function renderAll() {
+      renderStatusEditor();
+      renderLegend();
+      renderGrid();
+      renderTopicSummary();
+      saveState();
+    }
 
     function openCell(year, type, num) {
       currentCellKey = keyFor(year, type, num);
@@ -666,21 +817,37 @@
     }
 
     els.buildBtn.addEventListener('click', () => { normalize(); saveState(); renderAll(); });
-    els.resetLayoutBtn.addEventListener('click', () => { normalize(); renderGrid(); });
+    els.resetLayoutBtn.addEventListener('click', () => { normalize(); renderGrid(); renderTopicSummary(); });
     els.saveNowBtn.addEventListener('click', () => saveState());
+
     els.addStatusBtn.addEventListener('click', () => {
       state.settings.statuses.push({ id: uid('status'), name: 'New status', color: '#8b5cf6' });
-      saveState(); renderAll();
+      saveState();
+      renderAll();
     });
+
     els.closeModalBtn.addEventListener('click', closeModal);
     els.modalBackdrop.addEventListener('click', (e) => { if (e.target === els.modalBackdrop) closeModal(); });
-    els.latexInput.addEventListener('input', () => { if (!currentCellKey) return; updatePreview(); const p = getCurrentCellParts(); setCellData(p.year, p.type, p.num, { latex: els.latexInput.value, sourceUrl: els.sourceUrlInput.value }); });
-    els.sourceUrlInput.addEventListener('input', () => { if (!currentCellKey) return; const p = getCurrentCellParts(); setCellData(p.year, p.type, p.num, { sourceUrl: els.sourceUrlInput.value, latex: els.latexInput.value }); });
+
+    els.latexInput.addEventListener('input', () => {
+      if (!currentCellKey) return;
+      updatePreview();
+      const p = getCurrentCellParts();
+      setCellData(p.year, p.type, p.num, { latex: els.latexInput.value, sourceUrl: els.sourceUrlInput.value });
+    });
+
+    els.sourceUrlInput.addEventListener('input', () => {
+      if (!currentCellKey) return;
+      const p = getCurrentCellParts();
+      setCellData(p.year, p.type, p.num, { sourceUrl: els.sourceUrlInput.value, latex: els.latexInput.value });
+    });
+
     els.openSourceBtn.addEventListener('click', () => {
       const url = els.sourceUrlInput.value.trim();
       if (!url) return alert('Add a source URL first.');
       window.open(url, '_blank', 'noopener,noreferrer');
     });
+
     els.saveCellBtn.addEventListener('click', () => {
       if (!currentCellKey) return;
       const p = getCurrentCellParts();
@@ -693,12 +860,14 @@
       setCellData(p.year, p.type, p.num, { latex: els.latexInput.value, sourceUrl: els.sourceUrlInput.value, statusId });
       closeModal();
     });
+
     els.clearCellBtn.addEventListener('click', () => {
       if (!currentCellKey) return;
       const p = getCurrentCellParts();
       clearCell(p.year, p.type, p.num);
       closeModal();
     });
+
     els.copyLabelBtn.addEventListener('click', async () => {
       if (!currentCellKey) return;
       const p = getCurrentCellParts();
@@ -711,12 +880,21 @@
         alert(text);
       }
     });
+
     els.searchBox.addEventListener('input', applySearchFilter);
-    [els.startYear, els.endYear, els.problemsPerYear, els.siteTitle].forEach(el => {
-      el.addEventListener('change', () => { normalize(); saveState(); renderGrid(); renderLegend(); });
+
+    [els.startYear, els.endYear, els.problemsPerYear].forEach(el => {
+      el.addEventListener('change', () => {
+        normalize();
+        saveState();
+        renderGrid();
+        renderLegend();
+        renderTopicSummary();
+      });
     });
 
     renderAll();
   </script>
+
 </body>
 </html>
