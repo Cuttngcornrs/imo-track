@@ -589,10 +589,21 @@
       });
     }
 
-    function updatePreview(){
+    function updatePreview() {
       const text = els.latexInput.value.trim();
-      els.latexPreview.innerHTML = text ? `<div>$$${escapeHtml(text)}$$</div>` : '<div class="hint">Your LaTeX preview will show here.</div>';
-      if(window.MathJax?.typesetPromise) window.MathJax.typesetPromise([els.latexPreview]).catch(()=>{});
+
+      if (!text) {
+        els.latexPreview.innerHTML =
+          '<div class="hint">Your preview will show here.</div>';
+      } else {
+        els.latexPreview.innerHTML = escapeHtml(text)
+          .replace(/\n/g, "<br>");
+      }
+
+      if (window.MathJax?.typesetPromise) {
+        MathJax.typesetClear([els.latexPreview]);
+        MathJax.typesetPromise([els.latexPreview]);
+      }
     }
 
     function applySearchFilter(){
