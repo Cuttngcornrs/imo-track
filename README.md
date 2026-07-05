@@ -57,9 +57,7 @@ For the safest experience, sign in with Google so your progress can sync instead
 ## Notes
 
 * The tracker is static and works on GitHub Pages.
-* It does not require a database or backend.
 * It is meant to stay lightweight and easy to maintain.
-* If the source link is unavailable or you do not enter one, you can still use the tracker normally.
 
 ## Files
 
