@@ -66,7 +66,7 @@ For the safest experience, sign in with Google so your progress can sync instead
 * `index.html` — the full tracker app
 * `README.md` — this file
 
-## Tech stack
+## Tech stac
 
 * HTML
 * CSS
@@ -83,6 +83,4 @@ This project is intentionally simple, so it is easy to customize:
 * improve the popup or add more note fields
 * connect problem sources more tightly if you later add a backend
 
-## License
 
-Add a license here if you want the project to be public and reusable.
